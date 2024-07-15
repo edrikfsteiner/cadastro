@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Edrik Steiner">
+    <meta name="description" content="Desenvolvimento de uma mini aplicação Web para cadastro de clientes e endereços.">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Clientes</h2>
+        <form id="client-form" class="form-group">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" class="form-control" required pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ\s]+" title="Nome completo deve conter apenas letras e espaços">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" class="form-control" required pattern="\d{11}" title="CPF deve conter exatamente 11 dígitos">
+            <label for="birthdate">Data de Nascimento:</label>
+            <input type="date" id="birthdate" class="form-control" required>
+            <label for="phone">Telefone:</label>
+            <input type="text" id="phone" class="form-control" pattern="\d{1,11}" title="Telefone deve conter no máximo 11 dígitos">
+            <label for="cellphone">Celular:</label>
+            <input type="text" id="cellphone" class="form-control" required pattern="\d{1,11}" title="Celular deve conter no máximo 11 dígitos">
+            <button type="submit" class="btn btn-primary mt-2">Cadastrar Cliente</button>
+        </form>
+        <h2>Lista de Clientes</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Data de Nascimento</th>
+                    <th>Telefone</th>
+                    <th>Celular</th>
+                </tr>
+            </thead>
+            <tbody id="client-list">
+                <!-- Clientes serão listados aqui -->
+            </tbody>
+        </table>
+        <button id="address-register-button" class="btn btn-secondary mt-2">Cadastrar Endereços</button>
+        <button id="dbExport" class="btn btn-secondary mt-2">Exportar Banco de Dados</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/alasql@latest"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
