@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Edrik Steiner">
+    <meta name="description" content="Desenvolvimento de uma mini aplicação Web para cadastro de clientes e endereços.">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form" class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" class="form-control" required pattern="^(?!\d+$).+" title="Usuário não pode conter números">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" class="form-control" required>
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+        <button id="register-button" class="btn-secondary">Cadastrar Novo Usuário</button>
+        <button id="config-button" class="btn-info">Configurações</button>
+        <input type="file" id="db-upload" style="display:none;">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/alasql@latest"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
