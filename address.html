@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Edrik Steiner">
-    <meta name="description" content="Desenvolvimento de uma mini aplicação Web para cadastro de clientes e endereços.">
-    <title>Endereços</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Endereços</h2>
-        <form id="address-form" class="form-group">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" class="form-control" required>
-            <label for="street">Rua:</label>
-            <input type="text" id="street" class="form-control" required>
-            <label for="district">Bairro:</label>
-            <input type="text" id="district" class="form-control" required>
-            <label for="city">Cidade:</label>
-            <input type="text" id="city" class="form-control" required>
-            <label for="state">Estado:</label>
-            <input type="text" id="state" class="form-control" required>
-            <label for="country">País:</label>
-            <input type="text" id="country" class="form-control" required>
-            <label for="client-cpf">CPF do Cliente:</label>
-            <input type="text" id="client-cpf" class="form-control" required pattern="\d{11}" title="CPF deve conter exatamente 11 dígitos">
-            <div class="form-check">
-                <input type="checkbox" id="main" class="form-check-input">
-                <label for="main" class="form-check-label">Principal</label>
-            </div>
-            <button type="submit" class="btn btn-primary mt-2">Cadastrar Endereço</button>
-        </form>
-        <h2>Lista de Endereços</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>CEP</th>
-                    <th>Rua</th>
-                    <th>Bairro</th>
-                    <th>Cidade</th>
-                    <th>Estado</th>
-                    <th>País</th>
-                    <th>CPF do Cliente</th>
-                    <th>Principal</th>
-                </tr>
-            </thead>
-            <tbody id="address-list">
-                <!-- Endereços serão listados aqui -->
-            </tbody>
-        </table>
-        <button id="dbExport" class="btn btn-secondary mt-2">Exportar Banco de Dados</button>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Edrik Steiner">
+        <meta name="description" content="Desenvolvimento de uma mini aplicação Web para cadastro de clientes e endereços.">
+        <title>Endereços</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
 
-    <script src="https://cdn.jsdelivr.net/npm/alasql@latest"></script>
-    <script src="js/scripts.js"></script>
-</body>
+    <body>
+        <div class="container">
+            <h2>Endereços</h2>
+
+            <form id="address-form" class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" class="form-control" required pattern="\d{8}" title="CEP deve conter exatamente 8 dígitos">
+                <label for="street">Rua:</label>
+                <input type="text" id="street" class="form-control" required pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ\s]+" title="Rua deve conter apenas letras e espaços">
+                <label for="district">Bairro:</label>
+                <input type="text" id="district" class="form-control" required pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ\s]+" title="Bairro deve conter apenas letras e espaços">
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" class="form-control" required pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ\s]+" title="Cidade deve conter apenas letras e espaços">
+                <label for="state">Estado:</label>
+                <input type="text" id="state" class="form-control" required pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ\s]+" title="Estado deve conter apenas letras e espaços">
+                <label for="country">País:</label>
+                <input type="text" id="country" class="form-control" required pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ\s]+" title="País deve conter apenas letras e espaços">
+                <label for="client-cpf">CPF do Cliente:</label>
+                <input type="text" id="client-cpf" class="form-control" required pattern="\d{11}" title="CPF deve conter exatamente 11 dígitos">
+                <div class="form-check">
+                    <input type="checkbox" id="main" class="form-check-input">
+                    <label for="main" class="form-check-label">Principal</label>
+                </div>
+                <input type="hidden" id="address-id">
+
+                <button type="submit">Cadastrar Endereço</button>
+            </form>
+
+            <h2>Lista de Endereços</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>CEP</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>País</th>
+                        <th>CPF do Cliente</th>
+                        <th>Principal</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="address-list">
+                    <!-- Endereços serão listados aqui -->
+                </tbody>
+            </table>
+
+            <button id="dbExport">Exportar Banco de Dados</button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/alasql@latest"></script>
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
