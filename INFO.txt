@@ -1,1 +1,15 @@
+• Instruções para Rodar o Projeto
 
+- Abra o arquivo "index.html" em seu navegador para iniciar a aplicação;
+- Na tela de login, você pode cadastrar um usuário com o botão Cadastrar Usuário.
+  Insira o nome do usuário e a senha e, após terminar, coloque-os nos inputs;
+- Caso queira fazer upload de um banco de dados pronto, clique em Configurações e escolha um arquivo json compatível;
+- Após o login, você será redirecionado para a página de cadastro de clientes;
+- Na página de clientes, você pode cadastrar novos clientes preenchendo os inp uts e apertando em Cadastrar Cliente;
+- Cada cliente pode ser editado e deletado. Quando clicar em Editar, 
+  altere o que for necessário nos inputs acima e aperte Cadastrar Usuário para realizar as mudanças;
+- Para abrir a página de endereços, clique no botão Cadastrar Endereços;
+- Na página de endereços, cadastrar, editar e deletar é igual a de clientes.
+  Só pode haver um endereço principal por cliente;
+- Para exportar o banco de dados no formato JSON, clique no botão "Exportar Dados",
+  podendo ser tanto na página de clientes, como de endereços.
